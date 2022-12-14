@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph"
+    app:startDestination="@id/surahListFragment">
+
+    <fragment
+        android:id="@+id/surahListFragment"
+        tools:layout="@layout/fragment_surah_list"
+        android:name="com.yusufyildiz.quranapp.screens.list.SurahListFragment"
+        android:label="SurahListFragment" >
+        <action
+            android:id="@+id/action_surahListFragment_to_surahDetailFragment"
+            app:destination="@id/surahDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/surahDetailFragment"
+        android:name="com.yusufyildiz.quranapp.screens.detail.SurahDetailFragment"
+        tools:layout="@layout/fragment_surah_detail"
+        android:label="SurahDetailFragment" >
+        <argument
+            android:name="chapterId"
+            app:argType="integer"
+            android:defaultValue="1" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="Fatiha" />
+    </fragment>
+
+</navigation>
